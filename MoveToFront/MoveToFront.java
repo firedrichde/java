@@ -2,9 +2,11 @@ package dataStructure;
 import edu.princeton.cs.algs4.StdOut;
 /**
  * algs4 1.3.40
- * 前移编码
+ * 前移编码策略
  * @author wang
- *
+ * 从标准输入中读取一个字符串，使用链表保存这些字符并清除重复字符，规定表头插入
+ * 读取重复字符是，从链表中删去并再次插入表头。
+ * 这种策略假设最近访问过的元素很可能再次访问，可用于缓存、数据压缩等场景
  */
 public class MoveToFront {
 	public class Node{
@@ -15,7 +17,7 @@ public class MoveToFront {
 			next=null;
 		}
 	}
-	
+	//头节点
 	private Node head;
 	
 	public MoveToFront() {
